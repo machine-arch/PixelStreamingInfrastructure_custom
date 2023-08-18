@@ -44,12 +44,14 @@
       window.onload = function () {
         try {
           let video = document.querySelector('video');
-          if (video) {
+          let connectToStart = document.querySelector('#connectButton');
+          if (video && connectToStart) {
             var event = new MouseEvent('click', {
               bubbles: true,
               cancelable: true,
             });
             video.dispatchEvent(event);
+            connectToStart.dispatchEvent(event);
             console.log('Video element found. and clicked');
           } else {
             console.log('No video element found.');
