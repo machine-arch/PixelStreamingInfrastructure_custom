@@ -4096,7 +4096,6 @@
               (this.videoElement.style.height = '100%'),
               (this.videoElement.style.position = 'absolute'),
               (this.videoElement.style.pointerEvents = 'all'),
-              (this.videoElement.autoplay = !0),
               e.appendChild(this.videoElement),
               (this.onResizePlayerCallback = () => {
                 console.log(
