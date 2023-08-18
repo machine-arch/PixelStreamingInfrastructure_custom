@@ -41,23 +41,27 @@
     "
   >
     <script>
-      window.onload = function () {
-        try {
-          let video = document.querySelector('video');
-          if (video && connectToStart) {
-            var event = new MouseEvent('click', {
-              bubbles: true,
-              cancelable: true,
-            });
-            video.dispatchEvent(event);
-            console.log('Video element found. and clicked');
-          } else {
-            console.log('No video element found.');
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          try {
+            let playButton = document.querySelector("#playButton");
+            let video = document.querySelector("video");
+            if (video) {
+              video.setAttribute("muted", "true");
+              console.log("Video element found. and played");
+            }
+            if (playButton) {
+              playButton.click();
+              playButton.requestPointerLock();
+              console.log("Video element found. and clicked");
+            } else {
+              console.log("No video element found.");
+            }
+          } catch (e) {
+            console.log(e);
           }
-        } catch (e) {
-          console.log(e);
-        }
-      };
+        }, 2000);
+      });
     </script>
   </body>
 </html>
