@@ -4111,6 +4111,9 @@
               (this.videoElement.onclick = () => {
                 this.videoElement.paused && this.videoElement.play();
               }),
+              (this.videoElement.oncanplay = () => {
+                this.videoElement.play();
+              }),
               (this.videoElement.onload = () => {}),
               (this.videoElement.onloadedmetadata = () => {
                 this.onVideoInitialized();
